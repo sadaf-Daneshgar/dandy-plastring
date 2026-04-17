@@ -1,0 +1,136 @@
+/* ============================================================
+   ElitePlaster – Global Stylesheet
+   Used by: index.html | services.html | contact.html
+   ============================================================ */
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes bounceY {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(9px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- SCROLL FADE-UP ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.d1 {
+  transition-delay: 0.15s;
+}
+
+.d2 {
+  transition-delay: 0.30s;
+}
+
+.d3 {
+  transition-delay: 0.45s;
+}
+
+/* ---------- HERO ENTRANCE ANIMATION ---------- */
+.hero-anim>* {
+  animation: slideIn 0.8s ease both;
+}
+
+.hero-anim>*:nth-child(1) {
+  animation-delay: 0.10s;
+}
+
+.hero-anim>*:nth-child(2) {
+  animation-delay: 0.30s;
+}
+
+.hero-anim>*:nth-child(3) {
+  animation-delay: 0.50s;
+}
+
+.hero-anim>*:nth-child(4) {
+  animation-delay: 0.70s;
+}
+
+/* ---------- SCROLL BOUNCE INDICATOR ---------- */
+.anim-bounce {
+  animation: bounceY 2.2s ease-in-out infinite;
+}
+
+/* ---------- NAV LINK UNDERLINE HOVER ---------- */
+.nav-ul a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #c8902a;
+  transition: width 0.3s;
+}
+
+.nav-ul a:hover::after,
+.nav-ul a.active::after {
+  width: 100%;
+}
+
+/* ---------- SERVICE CARD BOTTOM BAR (Home page) ---------- */
+.svc::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #c8902a;
+  transition: width 0.4s;
+}
+
+.svc:hover::after {
+  width: 100%;
+}
+
+/* ---------- GALLERY IMAGE ZOOM (Home page) ---------- */
+.gal-img {
+  transition: transform 0.5s ease;
+}
+
+.gal-wrap:hover .gal-img {
+  transform: scale(1.07);
+}
+
+/* ---------- SERVICE BLOCK IMAGE ZOOM (Services page) ---------- */
+.sb-img img {
+  transition: transform 0.6s ease;
+}
+
+.sb-img:hover img {
+  transform: scale(1.04);
+}
+
+/* ---------- FORM INPUT FOCUS (Contact page) ---------- */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #c8902a !important;
+}
