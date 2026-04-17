@@ -30,7 +30,7 @@
 
 /* ---------- SCROLL FADE-UP ---------- */
 .fade-up {
-  opacity: 0;
+  /* opacity: 0; */
   transform: translateY(26px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
